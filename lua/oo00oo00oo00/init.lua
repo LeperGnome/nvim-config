@@ -48,8 +48,16 @@ require("lazy").setup({
 		config = function()
 			require("lualine").setup({
 				options = {
-					theme = "powerline",
+					theme = "16color",
 				},
+        sections = {
+          lualine_c = {
+            {
+              'filename',
+              path = 1,
+            },
+          },
+        },
 			})
 		end,
 	},
