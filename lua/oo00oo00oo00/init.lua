@@ -50,14 +50,14 @@ require("lazy").setup({
 				options = {
 					theme = "16color",
 				},
-        sections = {
-          lualine_c = {
-            {
-              'filename',
-              path = 1,
-            },
-          },
-        },
+				sections = {
+					lualine_c = {
+						{
+							"filename",
+							path = 1,
+						},
+					},
+				},
 			})
 		end,
 	},
