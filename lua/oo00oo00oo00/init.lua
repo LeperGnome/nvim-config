@@ -77,7 +77,7 @@ require("lazy").setup({
 		config = function()
 			require("lualine").setup({
 				options = {
-					theme = "16color",
+					theme = "powerline_dark",
 				},
 				sections = {
 					lualine_c = {
