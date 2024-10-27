@@ -4,7 +4,6 @@ require("oo00oo00oo00.keymaps")
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 vim.g.have_nerd_font = true
-vim.cmd.colorscheme("rose-pine-dark")
 
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -40,6 +39,38 @@ require("lazy").setup({
 		},
 	},
 	{ "gkapfham/vim-vitamin-onec" },
+  {
+    "EdenEast/nightfox.nvim",
+    config = function()
+      require('nightfox').setup({
+        options = {
+          -- Compiled file's destination location
+          transparent = true,     -- Disable setting background
+          terminal_colors = true,  -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
+          dim_inactive = false,    -- Non focused panes set to alternative background
+          module_default = true,   -- Default enable value for modules
+          styles = {               -- Style to be applied to different syntax groups
+            comments = "NONE",     -- Value is any valid attr-list value `:help attr-list`
+            conditionals = "NONE",
+            constants = "NONE",
+            functions = "NONE",
+            keywords = "NONE",
+            numbers = "NONE",
+            operators = "NONE",
+            strings = "NONE",
+            types = "NONE",
+            variables = "NONE",
+          },
+          inverse = {             -- Inverse highlight for different types
+            match_paren = true,
+            visual = false,
+            search = true,
+          },
+        },
+      })
+    vim.cmd.colorscheme("terafox")
+    end,
+  },
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
