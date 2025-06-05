@@ -14,6 +14,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+-- For gitlab-ci lsp
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.gitlab-ci*.{yml,yaml}",
+  callback = function()
+    vim.bo.filetype = "yaml.gitlab"
+  end,
+})
+
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -68,7 +77,7 @@ require("lazy").setup({
           },
         },
       })
-    vim.cmd.colorscheme("nightfox")
+      vim.cmd.colorscheme("nightfox")
     end,
   },
 	{
@@ -77,7 +86,7 @@ require("lazy").setup({
 		config = function()
 			require("lualine").setup({
 				options = {
-					theme = "powerline_dark",
+					theme = "nightfox",
 				},
 				sections = {
 					lualine_c = {

@@ -20,6 +20,7 @@ return { -- LSP Configuration & Plugins
 				require("lsp_signature").setup(opts)
 			end,
 		},
+
 	},
 	config = function()
 		--  This function gets run when an LSP attaches to a particular buffer.
@@ -33,6 +34,8 @@ return { -- LSP Configuration & Plugins
 				local map = function(keys, func)
 					vim.keymap.set("n", keys, func, { buffer = event.buf })
 				end
+
+                map("<leader>cd", vim.diagnostic.open_float)
 				map("gd", require("telescope.builtin").lsp_definitions)
 				map("gr", require("telescope.builtin").lsp_references)
 				map("gI", require("telescope.builtin").lsp_implementations)
@@ -114,6 +117,16 @@ return { -- LSP Configuration & Plugins
 			-- But for many setups, the LSP (`tsserver`) will work just fine
 			-- tsserver = {},
 			--
+            gitlab_ci_ls = {
+                cmd = { 'gitlab-ci-ls' },
+                init_options = {
+                    cache = '~/.cache/gitlab-ci-ls/',
+                    log_path = '~/.cache/gitlab-ci-ls/log/gitlab-ci-ls.log',
+                    options = {
+                        dependencies_autocomplete_stage_filtering = false,
+                    },
+                },
+            },
 
 			lua_ls = {
 				settings = {
