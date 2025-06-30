@@ -76,7 +76,6 @@ require("lazy").setup({
 					},
 				},
 			})
-			vim.cmd.colorscheme("nightfox")
 		end,
 	},
 	{
@@ -85,7 +84,7 @@ require("lazy").setup({
 		config = function()
 			require("lualine").setup({
 				options = {
-					theme = "nightfox",
+					theme = "carbonfox",
 				},
 				sections = {
 					lualine_c = {
@@ -128,6 +127,14 @@ require("lazy").setup({
 		},
 	},
 })
+
+vim.cmd.colorscheme("carbonfox")
+
+-- transparent background
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
+vim.api.nvim_set_hl(0, "Pmenu", { bg = "none" })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
