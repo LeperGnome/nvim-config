@@ -1,5 +1,5 @@
 vim.opt.number = true
-vim.o.statuscolumn = "%s %3l %2r | "
+vim.o.statuscolumn = "%s %3l %2r │ "
 vim.opt.ruler = true
 vim.opt.relativenumber = true
 
