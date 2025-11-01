@@ -78,13 +78,14 @@ require("lazy").setup({
 			})
 		end,
 	},
+  { "savq/melange-nvim" },
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
 			require("lualine").setup({
 				options = {
-					theme = "carbonfox",
+					theme = "melange",
 				},
 				sections = {
 					lualine_c = {
@@ -128,7 +129,7 @@ require("lazy").setup({
 	},
 })
 
-vim.cmd.colorscheme("carbonfox")
+vim.cmd.colorscheme("melange")
 
 -- transparent background
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
