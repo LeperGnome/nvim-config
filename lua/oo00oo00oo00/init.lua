@@ -85,7 +85,7 @@ require("lazy").setup({
 		config = function()
 			require("lualine").setup({
 				options = {
-					theme = "melange",
+					theme = "terafox",
 				},
 				sections = {
 					lualine_c = {
@@ -129,7 +129,7 @@ require("lazy").setup({
 	},
 })
 
-vim.cmd.colorscheme("melange")
+vim.cmd.colorscheme("terafox")
 
 -- transparent background
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })

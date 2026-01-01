@@ -136,6 +136,12 @@ return { -- LSP Configuration & Plugins
 		--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 		local servers = {
 			gopls = {},
+            clangd = {
+                cmd = {'clangd', '--query-driver=/usr/bin/g++', '--background-index', '--clang-tidy', '--enable-config', '--log=verbose'},
+                init_options = {
+                    fallbackFlags = { '-std=c++17' },
+                },
+            },
 			pyright = {
 				settings = {
 					python = {
