@@ -1,1 +1,6 @@
-require("oo00oo00oo00")
+require "konstantin.options"
+require "konstantin.keymaps"
+require "konstantin.autocmd"
+require "konstantin.lazy"
+require "konstantin.lsp"
+require "konstantin.colorscheme"
